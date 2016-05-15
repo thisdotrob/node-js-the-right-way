@@ -10,6 +10,6 @@ client.on('data', function(data) {
   } else if (message.type === 'watching') {
     console.log("Now watching " + message.file);
   } else {
-    throw Error("Unrecognised message type: " + message.type)
+    throw Error("Unrecognised message type: " + message.type);
   }
-})
+});
