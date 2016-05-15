@@ -25,3 +25,9 @@ const
 
 // make LDJClient’s prototypal parent object the EventEmitter prototype.
 util.inherits(LDJClient, events.EventEmitter);
+
+// expose module methods
+exports.LDJClient = LDJClient;
+exports.connect = function(stream) {
+  return new LDJClient(stream);
+};
