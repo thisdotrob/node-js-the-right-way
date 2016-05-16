@@ -10,7 +10,7 @@ responder.on('message', function(data) {
 
   fs.readFile(request.path, function(err, content) {
     let response = {
-      content: content,
+      content: content.toString(),
       timestamp: Date.now(),
       pid: process.pid
     };
