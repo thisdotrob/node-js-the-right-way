@@ -26,6 +26,11 @@ if (cluster.isMaster) {
     console.log('Worker ' + worker.process.pid + ' is online.');
   });
 
+  cluster.on('disconnect', function(worker) {
+    console.log('Worker ' + worker.process.pid + ' disconnected');
+    cluster.fork();
+  });
+
   // fork three worker processes
   for (let i = 0; i < 3; i++) {
     cluster.fork();
