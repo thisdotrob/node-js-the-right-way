@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xml:base="http://www.gutenberg.org/"
+  xmlns:pgterms="http://www.gutenberg.org/2009/pgterms/"
+  xmlns:marcrel="http://id.loc.gov/vocabulary/relators/"
+  xmlns:cc="http://web.resource.org/cc/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:dcam="http://purl.org/dc/dcam/"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <pgterms:ebook rdf:about="ebooks/132">
+    <dcterms:publisher>Project Gutenberg</dcterms:publisher>
+    <dcterms:hasFormat>
+      <pgterms:file rdf:about="http://www.gutenberg.org/files/132/132.txt">
+        <dcterms:format>
+          <rdf:Description rdf:nodeID="N5c16073221bd47edbce47c2c21281988">
+            <dcam:memberOf rdf:resource="http://purl.org/dc/terms/IMT"/>
+            <rdf:value rdf:datatype="http://purl.org/dc/terms/IMT">text/plain; charset=us-ascii</rdf:value>
+          </rdf:Description>
+        </dcterms:format>
+        <dcterms:isFormatOf rdf:resource="ebooks/132"/>
+        <dcterms:extent rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">343688</dcterms:extent>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-02-11T14:22:50</dcterms:modified>
+      </pgterms:file>
+    </dcterms:hasFormat>
+    <dcterms:creator>
+      <pgterms:agent rdf:about="2009/agents/4349">
+        <pgterms:name>Sunzi, active 6th century B.C.</pgterms:name>
+        <pgterms:alias>孫子</pgterms:alias>
+        <pgterms:alias>Sun Tzu</pgterms:alias>
+        <pgterms:alias>孙子</pgterms:alias>
+        <pgterms:webpage rdf:resource="http://zh.wikipedia.org/wiki/%E5%AD%99%E6%AD%A6"/>
+        <pgterms:webpage rdf:resource="http://en.wikipedia.org/wiki/Sun_Tzu"/>
+      </pgterms:agent>
+    </dcterms:creator>
+    <pgterms:marc546>Translated from the Chinese by Lionel Giles, M.A. (1910)</pgterms:marc546>
+    <marcrel:trl>
+      <pgterms:agent rdf:about="2009/agents/5101">
+        <pgterms:birthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1875</pgterms:birthdate>
+        <pgterms:webpage rdf:resource="http://en.wikipedia.org/wiki/Lionel_Giles"/>
+        <pgterms:deathdate rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1958</pgterms:deathdate>
+        <pgterms:name>Giles, Lionel</pgterms:name>
+      </pgterms:agent>
+    </marcrel:trl>
+    <dcterms:hasFormat>
+      <pgterms:file rdf:about="http://www.gutenberg.org/ebooks/132.html.noimages">
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-05-01T01:23:29.967781</dcterms:modified>
+        <dcterms:format>
+          <rdf:Description rdf:nodeID="N5725b31d701d43e88974fedcee7a788b">
+            <rdf:value rdf:datatype="http://purl.org/dc/terms/IMT">text/html</rdf:value>
+            <dcam:memberOf rdf:resource="http://purl.org/dc/terms/IMT"/>
+          </rdf:Description>
+        </dcterms:format>
+        <dcterms:isFormatOf rdf:resource="ebooks/132"/>
+        <dcterms:extent rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">375823</dcterms:extent>
+      </pgterms:file>
+    </dcterms:hasFormat>
+    <dcterms:hasFormat>
+      <pgterms:file rdf:about="http://www.gutenberg.org/ebooks/132.kindle.images">
+        <dcterms:extent rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">598692</dcterms:extent>
+        <dcterms:format>
+          <rdf:Description rdf:nodeID="N8312dd29d7cf41a2a8e9f91a8f871c8a">
+            <dcam:memberOf rdf:resource="http://purl.org/dc/terms/IMT"/>
+            <rdf:value rdf:datatype="http://purl.org/dc/terms/IMT">application/x-mobipocket-ebook</rdf:value>
+          </rdf:Description>
+        </dcterms:format>
+        <dcterms:isFormatOf rdf:resource="ebooks/132"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-05-01T01:23:31.951694</dcterms:modified>
+      </pgterms:file>
+    </dcterms:hasFormat>
+    <pgterms:downloads rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1515</pgterms:downloads>
+    <dcterms:hasFormat>
+      <pgterms:file rdf:about="http://www.gutenberg.org/ebooks/132.html.images">
+        <dcterms:isFormatOf rdf:resource="ebooks/132"/>
+        <dcterms:extent rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">375823</dcterms:extent>
+        <dcterms:format>
+          <rdf:Description rdf:nodeID="Nbbcddcdcc67f478d940bc80a2a4d2cbc">
+            <dcam:memberOf rdf:resource="http://purl.org/dc/terms/IMT"/>
+            <rdf:value rdf:datatype="http://purl.org/dc/terms/IMT">text/html</rdf:value>
+          </rdf:Description>
+        </dcterms:format>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-05-01T01:23:29.803797</dcterms:modified>
+      </pgterms:file>
+    </dcterms:hasFormat>
+    <dcterms:hasFormat>
+      <pgterms:file rdf:about="http://www.gutenberg.org/ebooks/132.kindle.noimages">
+        <dcterms:format>
+          <rdf:Description rdf:nodeID="N5fe17c7623ae4eeeba1fae3372d6ab1c">
+            <dcam:memberOf rdf:resource="http://purl.org/dc/terms/IMT"/>
+            <rdf:value rdf:datatype="http://purl.org/dc/terms/IMT">application/x-mobipocket-ebook</rdf:value>
+          </rdf:Description>
+        </dcterms:format>
+        <dcterms:extent rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">598684</dcterms:extent>
+        <dcterms:isFormatOf rdf:resource="ebooks/132"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-05-01T01:23:33.357631</dcterms:modified>
+      </pgterms:file>
+    </dcterms:hasFormat>
+    <dcterms:hasFormat>
+      <pgterms:file rdf:about="http://www.gutenberg.org/ebooks/132.epub.images">
+        <dcterms:isFormatOf rdf:resource="ebooks/132"/>
+        <dcterms:format>
+          <rdf:Description rdf:nodeID="N7f6ec4ff7e384ad498c7405b77315c7f">
+            <dcam:memberOf rdf:resource="http://purl.org/dc/terms/IMT"/>
+            <rdf:value rdf:datatype="http://purl.org/dc/terms/IMT">application/epub+zip</rdf:value>
+          </rdf:Description>
+        </dcterms:format>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-05-01T01:23:30.322770</dcterms:modified>
+        <dcterms:extent rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">147628</dcterms:extent>
+      </pgterms:file>
+    </dcterms:hasFormat>
+    <dcterms:hasFormat>
+      <pgterms:file rdf:about="http://www.gutenberg.org/ebooks/132.epub.noimages">
+        <dcterms:isFormatOf rdf:resource="ebooks/132"/>
+        <dcterms:extent rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">147628</dcterms:extent>
+        <dcterms:format>
+          <rdf:Description rdf:nodeID="N02278e5a65664cfe9ec52685f66e1dbb">
+            <rdf:value rdf:datatype="http://purl.org/dc/terms/IMT">application/epub+zip</rdf:value>
+            <dcam:memberOf rdf:resource="http://purl.org/dc/terms/IMT"/>
+          </rdf:Description>
+        </dcterms:format>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-05-01T01:23:30.538763</dcterms:modified>
+      </pgterms:file>
+    </dcterms:hasFormat>
+    <dcterms:language>
+      <rdf:Description rdf:nodeID="N1956f8c4fa5244f68d1962502b908573">
+        <rdf:value rdf:datatype="http://purl.org/dc/terms/RFC4646">en</rdf:value>
+      </rdf:Description>
+    </dcterms:language>
+    <dcterms:subject>
+      <rdf:Description rdf:nodeID="N3ce43385290844bd84256151557aa995">
+        <dcam:memberOf rdf:resource="http://purl.org/dc/terms/LCC"/>
+        <rdf:value>U</rdf:value>
+      </rdf:Description>
+    </dcterms:subject>
+    <dcterms:license rdf:resource="license"/>
+    <dcterms:subject>
+      <rdf:Description rdf:nodeID="N993b9d01db174262838b4a5dc550a6f7">
+        <rdf:value>Military art and science -- Early works to 1800</rdf:value>
+        <dcam:memberOf rdf:resource="http://purl.org/dc/terms/LCSH"/>
+      </rdf:Description>
+    </dcterms:subject>
+    <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1994-05-01</dcterms:issued>
+    <dcterms:description>See Project Gutenberg's eBook #17405 for this same text without the translator's annotations, and an HTML version.&#13;
+See also Wikipedia: &#13;
+http://en.wikipedia.org/wiki/The_Art_of_War</dcterms:description>
+    <dcterms:alternative>Sunzi bing fa. English</dcterms:alternative>
+    <dcterms:title>The Art of War</dcterms:title>
+    <dcterms:rights>Public domain in the USA.</dcterms:rights>
+    <pgterms:marc260>1910</pgterms:marc260>
+    <dcterms:hasFormat>
+      <pgterms:file rdf:about="http://www.gutenberg.org/ebooks/132.txt.utf-8">
+        <dcterms:isFormatOf rdf:resource="ebooks/132"/>
+        <dcterms:format>
+          <rdf:Description rdf:nodeID="N1ea89c9112044852a88229b02de4de07">
+            <dcam:memberOf rdf:resource="http://purl.org/dc/terms/IMT"/>
+            <rdf:value rdf:datatype="http://purl.org/dc/terms/IMT">text/plain</rdf:value>
+          </rdf:Description>
+        </dcterms:format>
+        <dcterms:extent rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">343691</dcterms:extent>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-05-01T01:23:28.970827</dcterms:modified>
+      </pgterms:file>
+    </dcterms:hasFormat>
+    <dcterms:subject>
+      <rdf:Description rdf:nodeID="Nf3a1dd5559744b5685fe5faea836eb00">
+        <rdf:value>War -- Early works to 1800</rdf:value>
+        <dcam:memberOf rdf:resource="http://purl.org/dc/terms/LCSH"/>
+      </rdf:Description>
+    </dcterms:subject>
+    <dcterms:hasFormat>
+      <pgterms:file rdf:about="http://www.gutenberg.org/ebooks/132.rdf">
+        <dcterms:extent rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12379</dcterms:extent>
+        <dcterms:format>
+          <rdf:Description rdf:nodeID="N41f3641b21634158b45e0b32acd6e688">
+            <dcam:memberOf rdf:resource="http://purl.org/dc/terms/IMT"/>
+            <rdf:value rdf:datatype="http://purl.org/dc/terms/IMT">application/rdf+xml</rdf:value>
+          </rdf:Description>
+        </dcterms:format>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-05-12T05:00:54.508691</dcterms:modified>
+        <dcterms:isFormatOf rdf:resource="ebooks/132"/>
+      </pgterms:file>
+    </dcterms:hasFormat>
+    <dcterms:type>
+      <rdf:Description rdf:nodeID="N01ab15e451934770938af8dc3d9afb42">
+        <rdf:value>Text</rdf:value>
+        <dcam:memberOf rdf:resource="http://purl.org/dc/terms/DCMIType"/>
+      </rdf:Description>
+    </dcterms:type>
+    <dcterms:hasFormat>
+      <pgterms:file rdf:about="http://www.gutenberg.org/files/132/132.zip">
+        <dcterms:format>
+          <rdf:Description rdf:nodeID="N74eeb9a540b349e297c0e7bf773b25fb">
+            <dcam:memberOf rdf:resource="http://purl.org/dc/terms/IMT"/>
+            <rdf:value rdf:datatype="http://purl.org/dc/terms/IMT">text/plain; charset=us-ascii</rdf:value>
+          </rdf:Description>
+        </dcterms:format>
+        <dcterms:isFormatOf rdf:resource="ebooks/132"/>
+        <dcterms:format>
+          <rdf:Description rdf:nodeID="N96bddee76f6946b2b61805b74e894d37">
+            <dcam:memberOf rdf:resource="http://purl.org/dc/terms/IMT"/>
+            <rdf:value rdf:datatype="http://purl.org/dc/terms/IMT">application/zip</rdf:value>
+          </rdf:Description>
+        </dcterms:format>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-02-11T14:23:32</dcterms:modified>
+        <dcterms:extent rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">130802</dcterms:extent>
+      </pgterms:file>
+    </dcterms:hasFormat>
+  </pgterms:ebook>
+  <cc:Work rdf:about="">
+    <rdfs:comment>Archives containing the RDF files for *all* our books can be downloaded at
+            http://www.gutenberg.org/wiki/Gutenberg:Feeds#The_Complete_Project_Gutenberg_Catalog</rdfs:comment>
+    <cc:license rdf:resource="http://www.gnu.org/licenses/gpl.html"/>
+  </cc:Work>
+  <rdf:Description rdf:about="http://en.wikipedia.org/wiki/Sun_Tzu">
+    <dcterms:description>en.wikipedia</dcterms:description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://en.wikipedia.org/wiki/Lionel_Giles">
+    <dcterms:description>en.wikipedia</dcterms:description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://zh.wikipedia.org/wiki/%E5%AD%99%E6%AD%A6">
+    <dcterms:description>zh.wikipedia</dcterms:description>
+  </rdf:Description>
+</rdf:RDF>

@@ -1,4 +1,5 @@
 'use strict';
+
 const fs = require('fs');
 const cheerio = require('cheerio');
 
@@ -18,7 +19,7 @@ module.exports = function(filename, callback) {
       _id: $('pgterms\\:ebook').attr('rdf:about').replace('ebooks/', ''),
       title: $('dcterms\\:title').text(),
       authors: $('pgterms\\:agent pgterms\\:name').map(collect),
-      subjects: $('[rdf\\:resource$="/LCSH"] ~ rdf\\:value').map(collect)
+      subjects: $('[rdf\\:resource$="/LCSH"]').siblings('rdf\\:value').map(collect)
     };
 
     callback(null, details);
