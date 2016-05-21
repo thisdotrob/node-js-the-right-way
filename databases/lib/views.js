@@ -2,6 +2,8 @@
 
 module.exports = {
 
+  // ./dbcli.js GET books/_design/books/_view/by_author?group=true
+
   by_author: {
 
     map: function(doc) {
@@ -24,7 +26,7 @@ module.exports = {
           });
         });
       }
-    },
+    }.toString(),
 
     reduce: '_count'
   }
