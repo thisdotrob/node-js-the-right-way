@@ -12,8 +12,12 @@ module.exports = {
       }
     }.toString(),
 
+    // group by author on book count
+
     reduce: '_count'
   },
+
+  // ./dbcli.js GET books/_design/books/_view/by_subjet?group=true
 
   by_subject: {
 
@@ -27,6 +31,8 @@ module.exports = {
         });
       }
     }.toString(),
+
+    // group by subject on book count
 
     reduce: '_count'
   }
