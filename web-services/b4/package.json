@@ -10,7 +10,8 @@
   "author": "",
   "license": "BSD-2-Clause",
   "dependencies": {
-    "request": "~2.27.0",
-    "express": "~3.3.8"
+    "express": "~3.3.8",
+    "q": "~0.9.7",
+    "request": "~2.27.0"
   }
 }
