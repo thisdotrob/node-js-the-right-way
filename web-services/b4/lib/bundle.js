@@ -32,7 +32,22 @@ module.exports = function(config, app) {
     };
 
     deferred.promise.then(onResolved, onRejected);
+  });
 
+  app.get('/api/bundle/:id', function(req, res) {
+
+    let onResolved = function(args){
+      let couchRes = args[0];
+      let bundle = JSON.parse(args[1]);
+      res.json(couchRes.statusCode, bundle);
+    };
+
+    let onRejected = function(err) {
+      res.json(502, { error: "bad_gateway", reason: err.code });
+    };
+
+    q.nfcall(request.get, config.b4db + '/' + req.params.id)
+      .then(onResolved, onRejected).done();
   });
 
 };
