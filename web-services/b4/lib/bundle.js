@@ -5,6 +5,8 @@ const q = require('q');
 
 module.exports = function(config, app) {
 
+  // create a new bundle with the specified name
+  // e.g. curl -X POST http://localhost:3000/api/bundle?name=<name>
   app.post('/api/bundle', function(req, res) {
     let deferred = q.defer();
 
@@ -34,6 +36,8 @@ module.exports = function(config, app) {
     deferred.promise.then(onResolved, onRejected);
   });
 
+  // get a given bundle
+  // e.g. curl -X POST http://localhost:3000/api/bundle/<id>
   app.get('/api/bundle/:id', function(req, res) {
 
     let onResolved = function(args){
