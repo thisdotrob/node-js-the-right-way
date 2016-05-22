@@ -5,6 +5,8 @@ const express = require('express');
 const app = express();
 
 app.use(express.logger('dev'));
+app.use(express.cookieParser());
+app.use(express.session({ secret: 'awesomesecret' }));
 
 const config = {
   bookdb: 'http://localhost:5984/books/',
