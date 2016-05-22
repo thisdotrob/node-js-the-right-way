@@ -9,10 +9,14 @@ module.exports = function(config, app) {
   // curl http://localhost:3000/api/search/subject?q=Croc
 
   app.get('/api/search/:view', function(req, res) {
+    let view = req.params.view;
+    if (view != 'author' && view != 'subject') {
+      res.json(400, { error: 'bad_request', reason: 'view does not exist' });
+    }
 
     let options = {
       method: 'GET',
-      url: config.bookdb + '_design/books/_view/by_' + req.params.view,
+      url: config.bookdb + '_design/books/_view/by_' + view,
       qs: {
         startkey: JSON.stringify(req.query.q),
         endkey: JSON.stringify(req.query.q + "\ufff0"),
@@ -21,7 +25,6 @@ module.exports = function(config, app) {
     };
 
     request(options, function(err, couchRes, body) {
-
       // The error case: CouchDB didn’t respond
       if (err) {
         res.json(502, { error: 'bad_gateway', reason: err.code });
@@ -37,11 +40,10 @@ module.exports = function(config, app) {
 
       // Success case
       let rows = JSON.parse(body).rows;
-
       res.json(rows.map(function(elem) {
         return elem.key;
       }));
-
     });
   });
+  
 };
