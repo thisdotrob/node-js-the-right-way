@@ -124,4 +124,39 @@ module.exports = function(config, app) {
     });
   });
 
+  // remove a book from a bundle
+  // e.g. curl -X DELETE http://localhost:3000/api/bundle/<id>/book/<pgid>
+  app.del('/api/bundle/:id/book/:pgid', function(req, res) {
+    q.async(function* (){
+
+      let args = yield q.nfcall(request, config.b4db + req.params.id);
+      let couchRes = args[0];
+      let bundle = JSON.parse(args[1]);
+
+      // fail fast if we couldn't retrieve the bundle
+      if (couchRes.statusCode !== 200) {
+        res.json(couchRes.statusCode, bundle);
+        return;
+      }
+
+      // fail if the bundle doesn't already have that book
+      if (!(req.params.pgid in bundle.books)) {
+        res.json(409, {
+          error: "conflict",
+          reason: "Bundle does not contain that book."
+        });
+        return;
+      }
+
+      // remove the book from the bundle
+      delete bundle.books[req.params.pgid];
+
+      // put the updated bundle back into CouchDB
+      request.put({ url: config.b4db + bundle._id, json: bundle }).pipe(res);
+    })()
+    .catch(function(err) {
+      res.json(502, { error: "bad_gateway", reason: err.code });
+    });
+  });
+
 };
