@@ -50,4 +50,29 @@ module.exports = function(config, app) {
       .then(onResolved, onRejected).done();
   });
 
+  app.get('/api/bundle/:id/name/:name', function(req, res) {
+    q.nfcall(request.get, config.b4db + '/' + req.params.id)
+      .then(function(args) {
+        let couchRes = args[0];
+        let bundle = JSON.parse(args[1]);
+        if (couchRes.statusCode !== 200) {
+          return [couchRes, bundle];
+        }
+        bundle.name = req.params.name;
+        return q.nfcall(request.put, {
+          url: config.b4db + '/' + req.params.id,
+          json: bundle
+        });
+      })
+      .then(function(args) {
+        let couchRes = args[0];
+        let body = args[1];
+        res.json(couchRes.statusCode, body);
+      })
+      .catch(function(err) {
+        res.json(502, { error: 'bad_gateway', reason: err.code });
+      })
+      .done();
+  });
+
 };
