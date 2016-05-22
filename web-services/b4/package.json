@@ -1,0 +1,16 @@
+{
+  "name": "b4",
+  "version": "0.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --harmony ./server.js"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "request": "~2.27.0",
+    "express": "~3.3.8"
+  }
+}
