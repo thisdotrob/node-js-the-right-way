@@ -5,6 +5,9 @@ const express = require('express');
 const app = express();
 const passport = require('passport');
 const GoogleStrategy = require('passport-google').Strategy;
+const redisClient = require('redis').createClient();
+const RedisStore = require('connect-redis')(express);
+const log = require('npmlog');
 
 app.use(express.logger('dev'));
 app.use(express.cookieParser());
@@ -42,6 +45,9 @@ app.get('/auth/logout', function(req, res){
   req.logout();
   res.redirect('/');
 });
+
+redisClient.on('ready', function() { log.info('REDIS', 'ready'); });
+redisClient.on('error', function(err) { log.error('REDIS', err.message ); });
 
 app.listen(3000, function() {
   console.log('Listening on 3000.');

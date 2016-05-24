@@ -17,5 +17,8 @@
     "passport-google": "~0.3.0",
     "connect-redis": "~1.4.5",
     "redis": "~0.8.4"
+  },
+  "devDependencies": {
+    "npmlog": "^2.0.4"
   }
 }
