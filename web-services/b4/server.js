@@ -70,6 +70,24 @@ app.get('/api/user/bundles', authed, function(req, res) {
   });
 });
 
+app.put('/api/user/bundles', [authed, express.json()], function(req, res) {
+  let userURL = config.b4db + encodeURIComponent(req.user.identifier);
+  request(userURL, function(err, couchRes, body) {
+    if (err) {
+      res.json(502, { error: "bad_gateway", reason: err.code });
+    } else if (couchRes.statusCode === 200) {
+      let user = JSON.parse(body);
+      user.bundles = req.body;
+      request.put({ url: userURL, json: user }).pipe(res);
+    } else if (couchRes.statusCode === 404) {
+      let user = { bundles: req.body };
+      request.put({ url: userURL, json: user }).pipe(res);
+    } else {
+      res.send(couchRes.statusCode, body);
+    }
+  });
+});
+
 redisClient.on('ready', function() { log.info('REDIS', 'ready'); });
 redisClient.on('error', function(err) { log.error('REDIS', err.message ); });
 
