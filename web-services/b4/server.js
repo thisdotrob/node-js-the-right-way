@@ -8,6 +8,7 @@ const BasicStrategy = require('passport-http').BasicStrategy;
 const redisClient = require('redis').createClient();
 const RedisStore = require('connect-redis')(express);
 const log = require('npmlog');
+const request = require('request');
 
 const authed = function(req, res, next) {
   if (req.isAuthenticated()) {
@@ -54,6 +55,19 @@ app.get('/auth/logout', function(req, res){
 
 app.get('/api/user', authed, function(req, res){
   res.json(req.user);
+});
+
+app.get('/api/user/bundles', authed, function(req, res) {
+  let userURL = config.b4db + encodeURIComponent(req.user.identifier);
+  request(userURL, function(err, couchRes, body) {
+    if (err) {
+      res.json(502, { error: "bad_gateway", reason: err.code });
+    } else if (couchRes.statusCode === 200) {
+      res.json(JSON.parse(body).bundles || {});
+    } else {
+      res.send(couchRes.statusCode, body);
+    }
+  });
 });
 
 redisClient.on('ready', function() { log.info('REDIS', 'ready'); });
