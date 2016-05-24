@@ -25,6 +25,8 @@ app.use(express.cookieParser());
 app.use(express.session({ secret: 'awesomesecret' }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(express.static(__dirname + '/static'));
+app.use(express.static(__dirname + '/bower_components'));
 
 const config = {
   bookdb: 'http://localhost:5984/books/',
@@ -32,6 +34,7 @@ const config = {
 };
 require('./lib/field-search.js')(config, app);
 require('./lib/bundle.js')(config, app);
+require('./lib/book-search.js')(config, app);
 
 passport.serializeUser(function(user, done) {
   done(null, user.identifier);
