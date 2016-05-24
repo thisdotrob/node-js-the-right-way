@@ -4,7 +4,7 @@
 const express = require('express');
 const app = express();
 const passport = require('passport');
-const GoogleStrategy = require('passport-google').Strategy;
+const BasicStrategy = require('passport-http').BasicStrategy;
 const redisClient = require('redis').createClient();
 const RedisStore = require('connect-redis')(express);
 const log = require('npmlog');
@@ -38,22 +38,22 @@ passport.serializeUser(function(user, done) {
 passport.deserializeUser(function(id, done) {
   done(null, { identifier: id });
 });
-passport.use(new GoogleStrategy({
-    returnURL: 'http://localhost:3000/auth/google/return',
-    realm: 'http://localhost:3000/'
-  },
-  function(identifier, profile, done) {
-    profile.identifier = identifier;
-    return done(null, profile);
+passport.use(new BasicStrategy(
+  function(userid, password, done) {
+    return done(null, { 'identifier': 'fakeuser' });
   }
 ));
 
-app.get('/auth/google/:return?',
-  passport.authenticate('google', { successRedirect: '/' })
+app.get('/auth/basic/:return?',
+  passport.authenticate('basic', { successRedirect: '/' })
 );
 app.get('/auth/logout', function(req, res){
   req.logout();
   res.redirect('/');
+});
+
+app.get('/api/user', authed, function(req, res){
+  res.json(req.user);
 });
 
 redisClient.on('ready', function() { log.info('REDIS', 'ready'); });
