@@ -9,6 +9,16 @@ const redisClient = require('redis').createClient();
 const RedisStore = require('connect-redis')(express);
 const log = require('npmlog');
 
+const authed = function(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
+  } else if (redisClient.ready) {
+    res.json(403, { error: "forbidden", reason: "not_authenticated" });
+  } else {
+    res.json(503, { error: "service_unavailable", reason: "authentication_unavailable" });
+  }
+};
+
 app.use(express.logger('dev'));
 app.use(express.cookieParser());
 app.use(express.session({ secret: 'awesomesecret' }));
